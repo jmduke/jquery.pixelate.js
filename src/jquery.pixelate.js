@@ -9,10 +9,13 @@ Licensed under the MIT license
 
 */
 
-;(function($) {
+(function($) {
+
+  var PIXELATE_DESIGNATOR = "#pCanvas";
 
   $.fn.pixelate = function (options) {
 
+    // TODO:  There's, like, definitely more customization that we could do here.
     var defaults = {
       
       focus     : 0.5,
@@ -21,37 +24,38 @@ Licensed under the MIT license
 
     this.each(function (index) {
 
+      // Since we pretty much remove the <img> element from the picture pretty quickly, we need to
+      // capture the important attributes before anything else.
       var width = this.width;
       var height = this.height;
 
-      var idSelector = "canvas" + index;
+      var idSelector = PIXELATE_DESIGNATOR + index;
 
-      if ($(this).is(":visible")) {
-        $(this).hide();
-      } else {
-        $(this).parent().children("canvas").remove();
-      }
-      $(this).after("<canvas id='" + idSelector + "''>");
+      // Hide the image itself, since we're transposing over it.
+      $(this).hide();
 
-      var idCanvas = $("#" + idSelector);
+      // Edge case: in multiple invocations of pixelate(), be sure to get rid of previous attempts.
+      $(this).parent().children("canvas").remove();
 
-      idCanvas.get(0).width = width;
-      idCanvas.get(0).height = height;
+      $(this).after("<canvas id='" + idSelector.slice(1) + "''>");
 
-      var context = $("#" + idSelector).get(0).getContext("2d");
+      $(idSelector).get(0).width = width;
+      $(idSelector).get(0).height = height;
 
-      var image = new Image();
+      var context = $(idSelector).get(0).getContext("2d");
 
+      // This is how the whole thing works.
+      context.imageSmoothingEnabled = false;
       context.mozImageSmoothingEnabled = false;
       context.webkitImageSmoothingEnabled = false;
-      context.imageSmoothingEnabled = false;
 
+      var image = new Image();
       image.src = this.src;
       image.onload = pixelate;
 
       function pixelate() {
 
-        var el = $("#canvas" + index).get(0);
+        var el = $(PIXELATE_DESIGNATOR + index).get(0);
 
         var relativeWidth = el.width * settings.focus * 0.25;
         var relativeHeight = el.height * settings.focus * 0.25;
