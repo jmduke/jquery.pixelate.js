@@ -3,6 +3,8 @@ body {
     font-family: 'Lora';
     padding: 2em;
     background-color: #fcfcf9;
+    color: #74757a;
+    padding-top: 3em;
 }
 
 .subheader {
@@ -29,6 +31,7 @@ body {
     font-size: 1.0em;
     letter-spacing: 0.1em;
     color: #74757a;
+    border: 1px #74757a solid;
     padding: 1em;
     width: 100%;
     box-sizing: border-box;
@@ -47,6 +50,19 @@ body {
     width: 100%;
     float: left;
     margin-bottom: 2em;
+}
+
+.images a {
+    color: inherit;
+    text-decoration: none;
+    margin: 1em;
+    border: 1px #74757a solid;
+    padding: 1em;
+    font-style: italic;
+}
+
+.images a:hover {
+    opacity: 0.8;
 }
 
 .example, canvas {
