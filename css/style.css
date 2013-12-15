@@ -1,0 +1,66 @@
+body {
+    text-align: center;
+    font-family: 'Lora';
+    padding: 2em;
+    background-color: #fcfcf9;
+}
+
+h3 {
+    font-style: italic;
+}
+
+ul {
+    width: 30%;
+    margin-left: 35%;
+    list-style-type: none;
+    float: left;
+    padding-left: 0;
+}
+
+li {
+    float: left;
+    width: 40%;
+    margin-left: 5%;
+}
+
+img, canvas {
+    width: 50%;
+}
+
+input {
+    width: 50%;
+    margin: 2em;
+}
+
+li a {
+    color: #fcfcf9;
+    text-decoration: none;
+    font-size: 1.0em;
+    letter-spacing: 0.1em;
+    background-color: #74757a;
+    padding: 1em;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+li a:hover {
+    margin-top: -5px;
+    opacity: 0.9;
+    transition: 0.5s;
+}
+
+.images {
+    width: 100%;
+    float: left;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.footer {
+    font-size: 0.8em;
+    opacity: 0.8;
+    margin-top: 4em;
+}

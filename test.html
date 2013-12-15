@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>jQuery.pixelate.js</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/style.css" type='text/css'>
+
+    <script type="text/javascript" src="./src/jquery.js"></script>
+    <script type="text/javascript" src="./src/jquery.pixelate.js"></script>
+</head>
+<body>
+    
+    <div class="wrapper">
+
+        <h1><span>jquery.pixelate.js</span></h1>
+        <h3>Why be retina-friendly when you could be SNES-friendly?</h3>
+
+        <ul class="social">
+            <li><a href="github.com">GitHub</a>
+            <li><a href="#">Tweet</a>
+        </ul>
+
+        <div class="images">
+            <a href="#" onClick="loadImage('./img/example_1.jpg')">Image 1</a>
+            <a href="#" onClick="loadImage('./img/example_2.jpg')">Image 2</a>
+            <a href="#" onClick="loadImage('./img/example_3.jpg')">Image 3</a>
+        </div>
+
+        <input id="blocks1" type="range" min="1" max="50" value="50">
+
+        <img src="img/example_1.jpg">
+
+
+    </div>
+
+    <div class="footer">
+        Made with love in rainy Seattle by <a href="http://www.twitter.com/justinmduke">Justin Duke</a>.
+    </div>
+
+    <script>
+        function loadImage(imagePath) {
+            $("canvas").remove();
+            $("img").show();
+            $("img").attr("src", imagePath);
+        }
+
+        $(document).ready(function(){
+            $("input").get(0).addEventListener('change', function() { 
+                $("img").pixelate({
+                    'focus' : 0.01 * this.value
+                });
+            }, false);
+        });
+    </script>
+    
+</body>
+</html>
