@@ -27,6 +27,7 @@
             <a href="#" onClick="loadImage('./img/example_1.jpg')">Image 1</a>
             <a href="#" onClick="loadImage('./img/example_2.jpg')">Image 2</a>
             <a href="#" onClick="loadImage('./img/example_3.jpg')">Image 3</a>
+            <a href="#" onClick="loadUrl()">Custom URL</a>
         </div>
 
         <input class="slider" type="range" min="1" max="50" value="50">
@@ -45,6 +46,11 @@
             $("canvas").remove();
             $("img").show();
             $("img").attr("src", imagePath);
+        }
+
+        function loadUrl() {
+            var url = prompt("Enter an absolute URL for an image.");
+            loadImage(url);
         }
 
         $(document).ready(function(){
