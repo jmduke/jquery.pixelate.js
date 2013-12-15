@@ -25,17 +25,16 @@ body {
 }
 
 .social a {
-    color: #fcfcf9;
     text-decoration: none;
     font-size: 1.0em;
     letter-spacing: 0.1em;
-    background-color: #74757a;
+    color: #74757a;
     padding: 1em;
     width: 100%;
     box-sizing: border-box;
     display: block;
-    text-transform: uppercase;
     transition: 0.5s;
+    font-style: italic;
 }
 
 .social a:hover {
