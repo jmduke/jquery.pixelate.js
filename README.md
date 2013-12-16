@@ -9,9 +9,11 @@ Check out the demo [here](https://rawgithub.com/jmduke/jquery.pixelate.js/master
 1.  Include jQuery and jquery.pixelate.js
 2.  Apply the `pixelate()` function, a la:
 
-    $(document).ready(function() {
+```
+$(document).ready(function() {
 	$('img').pixelate();
-    });
+});
+```
 
 3.  Revel in your newfound retro cred.
 
