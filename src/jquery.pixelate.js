@@ -11,14 +11,15 @@ Licensed under the MIT license
 
 (function($) {
 
-  var PIXELATE_DESIGNATOR = "#pCanvas";
+
 
   $.fn.pixelate = function (options) {
 
     // TODO:  There's, like, definitely more customization that we could do here.
     var defaults = {
       
-      focus     : 0.5,
+      focus           : 0.5,
+      canvasID  : "pCanvas"
 
     }, settings = $.extend({}, defaults, options);
 
@@ -29,7 +30,7 @@ Licensed under the MIT license
       var width = this.width;
       var height = this.height;
 
-      var idSelector = PIXELATE_DESIGNATOR + index;
+      var idSelector = "#" + settings.canvasID + index;
 
       // Hide the image itself, since we're transposing over it.
       $(this).hide();
@@ -55,7 +56,7 @@ Licensed under the MIT license
 
       function pixelate() {
 
-        var el = $(PIXELATE_DESIGNATOR + index).get(0);
+        var el = $("#" + settings.canvasID + index).get(0);
 
         var relativeWidth = el.width * settings.focus * 0.25;
         var relativeHeight = el.height * settings.focus * 0.25;
