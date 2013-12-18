@@ -50,11 +50,7 @@ Licensed under the MIT license
       context.mozImageSmoothingEnabled = false;
       context.webkitImageSmoothingEnabled = false;
 
-      var image = new Image();
-      image.src = this.src;
-      image.onload = pixelate;
-
-      function pixelate() {
+      function pixelate(image) {
 
         var el = $("#" + settings.canvasID + index).get(0);
 
@@ -65,6 +61,8 @@ Licensed under the MIT license
         context.drawImage(el, 0, 0, relativeWidth, relativeHeight, 0, 0, el.width, el.height);
 
       }
+
+      pixelate(this);
 
     });
 
