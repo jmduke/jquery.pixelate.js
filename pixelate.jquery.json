@@ -1,0 +1,26 @@
+{
+        "name": "pixelate",
+        "version": "0.1.2",
+        "title": "jquery.pixelate.js",
+        "author": {
+                "name": "Justin Duke",
+                "email": "me@jmduke.com",
+                "url": "http://jmduke.com"
+        },
+        "licenses": [
+                {
+                        "type": "MIT",
+                        "url": "http://choosealicense.com/licenses/mit/"
+                }
+        ],
+        "dependencies": {
+                "jquery": ">=1.71"
+        },
+        "description": "Why be retina-friendly when you could be SNES-friendly?",
+        "keywords": [
+                "graphics",
+                "images",
+                "fun",
+                "retro"
+        ]
+}
